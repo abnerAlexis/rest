@@ -2,18 +2,15 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import java.util.HashMap;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.isA;
 
-public class SuccessfulRegistry {
-    private static final HttpCallManager httpCallManager = new HttpCallManager();
-    private String URL = "https://reqres.in/";
+public class SuccessfulRegistry extends Base {
     private  String path =  URL + "api/register";
 
     @Test
-    public void registerSuccessful(){
+    public void registerSuccessful() {
         HashMap<String, String> body = new HashMap<>();
         body.put("email", "eve.holt@reqres.in");
         body.put("password", "pistol");
@@ -27,7 +24,7 @@ public class SuccessfulRegistry {
     }
 
     @Test
-    public void registerUnsuccessful(){
+    public void registerUnsuccessful() {
         HashMap<String, String> body = new HashMap<>();
         body.put("email", "eve.holt@reqres.in");
 

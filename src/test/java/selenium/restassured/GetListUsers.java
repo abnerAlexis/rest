@@ -2,15 +2,12 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import java.util.Arrays;
 import java.util.List;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class GetListUsers {
-    private static final String URL = "https://reqres.in/";
-    private HttpCallManager httpCallManager = new HttpCallManager();
+public class GetListUsers extends Base {
 
     @Test
     public void getUsers() {
@@ -20,6 +17,7 @@ public class GetListUsers {
             "michael.lawson@reqres.in", "lindsay.ferguson@reqres.in",
             "tobias.funke@reqres.in", "byron.fields@reqres.in",
             "george.edwards@reqres.in", "rachel.howell@reqres.in");
+
         httpCallManager.getRequest(path)
             .then()
             .statusCode(HttpStatus.SC_OK)

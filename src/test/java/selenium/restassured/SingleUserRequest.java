@@ -2,16 +2,13 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import static org.hamcrest.core.Is.is;
 
-public class SingleUserRequest {
-    private static final String URL = "https://reqres.in/";
-    private final HttpCallManager httpCallManager = new HttpCallManager();
-    private static final String path = URL + "api/users/2";
+public class SingleUserRequest extends Base {
 
     @Test
-    public void getSingleUserId(){
+    public void getSingleUserId() {
+        String path = URL + "api/users/2";
         httpCallManager.getRequest(path)
             .then()
             .statusCode(HttpStatus.SC_OK)
@@ -24,9 +21,10 @@ public class SingleUserRequest {
             .body("support.text", is("To keep ReqRes free, contributions towards server costs are appreciated!"))
         ;
     }
+
     @Test
-    public void getSingleUserNotFound(){
-        httpCallManager.getRequest(path)
+    public void getSingleUserNotFound() {
+        httpCallManager.getRequest(URL + "api/users/23")
             .then()
             .statusCode(HttpStatus.SC_NOT_FOUND)
         ;

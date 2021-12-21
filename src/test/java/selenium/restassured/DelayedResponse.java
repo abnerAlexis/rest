@@ -3,15 +3,12 @@ package selenium.restassured;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 
-public class DelayedResponse {
-    private static HttpCallManager httpCallManager = new HttpCallManager();
-    public static final String URL = "https://reqres.in/";
-    public static String path = URL + "api/users?delay=3\n";
+public class DelayedResponse extends Base {
 
     @Test
-    public static void getList(){
+    public void getList() {
+        String path = URL + "api/users?delay=3\n";
         httpCallManager.getRequest(path)
             .then()
             .statusCode(HttpStatus.SC_OK)

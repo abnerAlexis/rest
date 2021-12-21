@@ -2,17 +2,14 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import java.util.HashMap;
 import static org.hamcrest.Matchers.is;
 
-public class LoginRequest {
-    private static final HttpCallManager httpCallManager = new HttpCallManager();
-    private final String URL = "https://reqres.in/";
+public class LoginRequest extends Base {
     private String path = URL + "api/login";
 
     @Test
-    public void loginRequest(){
+    public void loginRequest() {
         HashMap<String, String> body = new HashMap<>();
         body.put("email", "eve.holt@reqres.in");
         body.put("password", "cityslicka");
@@ -25,7 +22,7 @@ public class LoginRequest {
     }
 
     @Test
-    public void loginRequestUnsuccessful(){
+    public void loginRequestUnsuccessful() {
         HashMap<String, String> body = new HashMap<>();
         body.put("email", "peter@klaven");
 

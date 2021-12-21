@@ -2,18 +2,15 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import java.util.Arrays;
 import java.util.List;
 import static org.hamcrest.Matchers.is;
 
-public class ResourceListRequest {
-    private static final String URL = "https://reqres.in/";
-    private final HttpCallManager httpCallManager = new HttpCallManager();
+public class ResourceListRequest extends Base {
     private final String path = URL + "api/unknown";
 
     @Test
-    public void getStatusCode(){
+    public void getStatusCode() {
         List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5, 6);
         List<String> names = Arrays.asList("cerulean", "fuchsia rose", "true red",
                                             "aqua sky", "tigerlily", "blue turquoise");

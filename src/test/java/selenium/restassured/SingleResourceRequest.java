@@ -2,16 +2,13 @@ package selenium.restassured;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-import selenium.common.HttpCallManager;
 import static org.hamcrest.core.Is.is;
 
-public class SingleResourceRequest {
-    private static final String URL = "https://reqres.in/";
-    private static final HttpCallManager httpCallManager = new HttpCallManager();
-    private static String path = URL + "api/unknown/2";
+public class SingleResourceRequest extends Base {
 
     @Test
-    public static void getSingleResourceStatusCode(){
+    public void getSingleResourceStatusCode() {
+        String path = URL + "api/unknown/2";
         httpCallManager.getRequest(path)
             .then()
             .statusCode(HttpStatus.SC_OK)
@@ -26,7 +23,7 @@ public class SingleResourceRequest {
     }
 
     @Test
-    public static void getSingleResourceNotFound(){
+    public void getSingleResourceNotFound(){
         httpCallManager.getRequest(URL + "api/unknown/23")
             .then()
             .statusCode(HttpStatus.SC_NOT_FOUND)
