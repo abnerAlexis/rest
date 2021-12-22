@@ -21,12 +21,4 @@ public class SingleResourceRequest extends Base {
             .body("support.text", is("To keep ReqRes free, contributions towards server costs are appreciated!"))
         ;
     }
-
-    @Test
-    public void getSingleResourceNotFound(){
-        httpCallManager.getRequest(URL + "api/unknown/23")
-            .then()
-            .statusCode(HttpStatus.SC_NOT_FOUND)
-        ;
-    }
 }

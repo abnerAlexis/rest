@@ -6,11 +6,11 @@ import java.util.HashMap;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isA;
 
-public class UpdateRecords extends Base {
+public class UpdateRecordsPut extends Base {
     private String path = URL + "api/users/2";
 
     @Test
-    public void updateRecord() {
+    public void updateRecordWithPut() {
         HashMap<String, String> body = new HashMap<>();
         body.put("name", "morpheus");
         body.put("job", "zion resident");
