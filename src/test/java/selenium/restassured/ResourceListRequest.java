@@ -7,10 +7,10 @@ import java.util.List;
 import static org.hamcrest.Matchers.is;
 
 public class ResourceListRequest extends Base {
-    private final String path = URL + "api/unknown";
 
     @Test
     public void getStatusCode() {
+        String path = URL + "api/unknown";
         List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5, 6);
         List<String> names = Arrays.asList("cerulean", "fuchsia rose", "true red",
                                             "aqua sky", "tigerlily", "blue turquoise");

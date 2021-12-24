@@ -3,7 +3,7 @@ package selenium.restassured;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
-public class SingleResourceNotFound extends Base{
+public class SingleResourceNotFound extends Base {
 
     @Test
     public void getSingleResourceStatusCode() {
