@@ -3,7 +3,6 @@ package selenium.restassured;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
-
 import java.util.Arrays;
 import java.util.List;
 

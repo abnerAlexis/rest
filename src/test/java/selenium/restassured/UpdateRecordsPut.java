@@ -3,7 +3,6 @@ package selenium.restassured;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 import java.util.HashMap;
-
 import static org.hamcrest.Matchers.*;
 
 public class UpdateRecordsPut extends Base {
