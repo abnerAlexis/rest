@@ -5,7 +5,6 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.hamcrest.Matchers.is;
 
 public class DelayedResponse extends Base {
